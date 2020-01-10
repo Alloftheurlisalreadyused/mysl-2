@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>XL Asiata</title>
+	
+		<link rel="stylesheet" href="style.css">
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+	</head>
+<body>
+	<div class="logo">
+	<img src="logosl.png" alt="mysl.png">
+	</div>
+    <br>
+
+    <div class="kotak_login" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+		<p class="tulisan_login">Login</p>
+ 
+		<form name="loginform" id="frm" method="POST">
+			<label>XL Number</label>
+			<input type="number" id="SL_number" class="form_login" placeholder="0878-XXXX-XXXX">
+ 
+			<label>Password</label>
+			<input type="password" id="password" class="form_login" placeholder="Password" border-radius: 4px>
+ 
+			<input type="button" id="login" class="tombol_login" value="LOGIN" onclick="validate()" onclick="simpan()" onclick="tampil()">
+		</form>
+	</div>
+    
+	<script type="text/javascript">
+		function validate(){
+		var number = document.getElementById('SL_number').value
+		var pass = document.getElementById('password').value
+		if(number == "" || isNaN(number) || number.length != 12 
+		|| !number.startsWith("0878")) 
+		{
+			alert('Your Number is incorrect !')
+			loginform.reset()
+		}else if(pass == "" || pass.length < 5 || pass.length > 25){
+			alert('Password Incorrect !')
+			loginform.reset()
+		}else{
+			alert('Login Success')
+			window.location = "Home.html"
+			return true
+		}
+	}
+
+	function simpan(){
+		var storage = document.getElementById('SL_number').value
+		localStorage.setItem('Text',storage)
+	}
+
+	function hapus(){
+		localStorage.removeItem('Text')
+	}
+
+	function tampil(){
+		var tampilnomor = localStorage.getItem('Text')
+		if(tampilnomor){
+			x = document.getElementById('tampil')
+			x.innerHTML = tampilnomor
+		}
+	}
+	</script>
+</body>
+<br>
+<footer>
+	<div class="footer">
+		<p>Copyright © 2019 SL Asiata. All Rights Reserved. </p>
+	</div>
+</footer>
+
+</html>

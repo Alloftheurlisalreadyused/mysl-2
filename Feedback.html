@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>XL Asiata • Feedback</title>
+    <link rel="stylesheet" href="style2.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/bootstrap.js"></script>
+</head>
+<body style="background-color: #5f6caf;">
+        <div class="Menu">
+            <a href="Home.html"><img src="logosl.png" alt="my_sl.png" width="60px" height="80px"/><br></a>
+                <button class="tablinks" onclick="window.location.href='Home.html'">Home</button>
+                <button class="tablinks" onclick="window.location.href='Package.html'">My Package</button>
+                <button class="tablinks" onclick="window.location.href='Promo.html'">Promo</button>
+                <button class="tablinks" onclick="window.location.href='Feedback.html'">Feedback</button>
+                <button class="login_button" onclick="window.location.href='Login.html'">Logout</button>
+                </div>  
+    <form name="feedback" method="POST" onsubmit="validate()" class="formfeedback" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif">
+        <p style="font-size:20pt">Feedback Form</p>    
+        <label>Name</label> <br>
+        <input style="margin-top: 5px; padding: 5px; border-radius: 5px;" type="text" id="name" name="name" placeholder="Your Name">
+        <br><br>
+        <label>Email:</label> <br>
+        <input style="margin-top: 5px; padding: 5px; border-radius: 5px;" type="text" id="email" name="email" placeholder="Your Email" style="border-radius: 7px">
+        <br><br>
+        <label>Feedback:</label> <br>
+        <textarea style="margin-top: 5px; border-radius: 5px;" name="afeedback" id="feedback" placeholder="Your Feedback" rows="10" cols="60"></textarea>
+        <br><br>
+        <input style="border-radius: 5px; padding: 10px;" type="submit" class="submit" value="Submit" onclick="validate()">
+        <input type="reset" style="border-radius: 5px; padding: 10px;" class="reset" value="Reset"> 
+    </form>
+
+    <script type="text/javascript">
+        function IsValidEmail(email) {
+        if (email.length <= 2) {
+            return false;
+        }
+        if (email.indexOf("@") == -1) {
+            return false;
+        }
+        var parts = email.split("@");
+        var dot = parts[1].indexOf(".");
+        var len = parts[1].length;
+        var dotSplits = parts[1].split(".");
+        var dotCount = dotSplits.length - 1;
+        if (dot == -1 || dot < 2 || dotCount > 2) {
+            return false;
+        }
+        for (var i = 0; i < dotSplits.length; i++) {
+            if (dotSplits[i].length == 0) {
+                return false;
+            }
+        }
+        return true;
+    };
+        function validate(){
+            var name = document.getElementById('name').value
+            var email = document.getElementById('email').value
+            var feedback = document.getElementById('feedback').value
+
+            if(name == "" || name.length < 5){
+                alert('Name too short')
+            }else if(name.length > 25){
+                alert('Name too long')
+            }else if(!IsValidEmail(email)){
+                alert('Invalid email address')
+            }
+            else if (feedback == ""){
+                alert('Feedback must be filled!')
+            }else{
+                alert('Thank you for the feedback 😊')
+                feedback.reset()
+            }   
+        }
+    </script>
+
+
+    <audio autoplay loop>
+        <source src="River flows in you.mp3" type="audio/mpeg">
+    </audio>
+    <footer>
+            <div class="footer">
+                <p>Copyright © 2019 SL Asiata. All Rights Reserved. </p>
+            </div>
+        </footer>
+</body>
+</html>

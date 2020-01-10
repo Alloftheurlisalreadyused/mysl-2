@@ -1,0 +1,117 @@
+*{
+	padding :0;
+	margin :0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+  }
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    float: left;
+    padding: 10px;
+    background-color: darkgoldenrod;
+   transition: 1s 
+}
+
+body{
+	font-family: sans-serif;
+	background: #293858;
+}
+ 
+h1{
+	text-align: center;
+	/*ketebalan font*/
+	font-weight: 300;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+ 
+.tulisan_login{
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 18pt;
+}
+ 
+.kotak_login{
+	width: 350px;
+	background: white;
+	margin: 10px 480px;
+	padding: 30px 20px;
+	border-radius: 5px;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);	
+}
+ 
+label{
+	font-size: 11pt;
+}
+ 
+.form_login{
+	box-sizing : border-box;
+	width: 100%;
+	padding: 10px;
+	font-size: 11pt;
+	margin-bottom: 20px;
+	box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+ 
+.tombol_login{
+	background: #DD5D00;
+	color: white;
+	font-size: 13pt;
+	width: 99.10%;
+	border: none;
+	padding: 10px 20px;
+	border-radius: 4px
+}
+ 
+.tombol_login:hover{
+	background-color:rgb(212, 65, 28);
+	transition: all 1s;
+	color:aliceblue
+}
+
+input.link{
+    background: #DD5D00;
+	color: white;
+	font-size: 13pt;
+	width: 100%;
+	border: none;
+	border-radius: 3px;
+	padding: 10px 10px;
+	text-decoration: none;
+	border-radius: 4px
+}
+
+.footer{
+	color: white;
+	text-align: center;
+	padding-left: 30em;
+	padding-right: 33em;
+	font-family: sans-serif;
+	background-color: #384561;
+	margin-left: 0px;
+	margin-bottom: 80px;
+	position:absolute;
+	bottom:-30em;
+}
+input.link:hover{
+	background-color: rgb(212, 65, 28);
+	color: black;
+	transition: all 1s;
+}
+img{
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 7%;
+	background: #edf7fa;
+	padding: 20px;
+	border-radius: 10%;
+	opacity: 0.5;
+}
